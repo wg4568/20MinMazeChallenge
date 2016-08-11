@@ -8,6 +8,9 @@ class player:
 
 def load_maze(file):
 	lines = zlib.decompress(b64decode(open(file, "r").read())).split(",")
+	for line in lines:
+		print line
+
 	maze = {}
 	for line,y in zip(lines, xrange(len(lines))):
 		for point,x in zip(list(line), xrange(len(line))):
